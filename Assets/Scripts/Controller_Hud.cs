@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Controller_Hud : MonoBehaviour
 {
@@ -27,7 +29,7 @@ public class Controller_Hud : MonoBehaviour
         else
         {
             distance += Time.deltaTime;
-            distanceText.text = distance.ToString();
+            distanceText.text = String.Format("{0:000}",distance);
         }
     }
 }
