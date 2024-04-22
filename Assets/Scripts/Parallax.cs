@@ -19,5 +19,16 @@ public class Parallax : MonoBehaviour
         {
             transform.localPosition = new Vector3(20, transform.localPosition.y, transform.localPosition.z);
         }
+
+        StopParallax();
+    }
+
+    public void StopParallax()
+    {
+        if (Controller_Hud.gameOver == true)
+        {
+            parallaxEffect = 0; /*Siendo esta variable el coeficiente que "empuja" hacia la izquierda los assets del fondo,
+                                 se iguala a cero para detenerlos por completo*/ 
+        }
     }
 }

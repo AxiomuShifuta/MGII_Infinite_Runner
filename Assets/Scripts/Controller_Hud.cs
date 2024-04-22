@@ -23,13 +23,16 @@ public class Controller_Hud : MonoBehaviour
         if (gameOver)
         {
             Time.timeScale = 0;
-            gameOverText.text = "Game Over \n Total Distance: " + distance.ToString();
+            gameOverText.text = "Game Over \n Total Distance: " + String.Format("{0:00}", distance);
+            
             gameOverText.gameObject.SetActive(true);
         }
         else
         {
             distance += Time.deltaTime;
-            distanceText.text = String.Format("{0:000}",distance);
+            distanceText.text = String.Format("{0:00}",distance); 
+            /*Convierte el valor del deltaTime a un formato que lo redondea. También aplica al texto del GameOver de
+             la línea 26*/
         }
     }
 }
