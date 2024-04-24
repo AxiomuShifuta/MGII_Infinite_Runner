@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9145002132079440592}
   - component: {fileID: 9145002132079440595}
   - component: {fileID: 9145002132079440594}
+  - component: {fileID: 793146080808248905}
   - component: {fileID: -5287314150538996035}
   m_Layer: 0
   m_Name: Enemy4
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 3, y: 1, z: 1}
+  m_LocalScale: {x: 1.28, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,6 +120,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b42ae49f0717b214fbe01d8a65b48916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &793146080808248905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145002132079440597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ce278351921bc546a63032ae9ff5a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumptimer: 3
+  jumpForce: 5
 --- !u!54 &-5287314150538996035
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -141,8 +156,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 124
+  m_Constraints: 120
   m_CollisionDetection: 0

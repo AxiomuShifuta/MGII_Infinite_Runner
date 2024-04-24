@@ -3,14 +3,14 @@
 public class Controller_Enemy : MonoBehaviour
 {
     public static float enemyVelocity;
-    private Rigidbody rb;
+    internal Rigidbody rb;
 
-    void Start()
+    void Awake() //Si no uso Awake acá, me tira una NullException al momento de instanciar el enemigo púrpura.
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    public virtual void Update()
     {
         rb.AddForce(new Vector3(-enemyVelocity, 0, 0), ForceMode.Force);
         OutOfBounds();
