@@ -14,7 +14,8 @@ public class Parallax : MonoBehaviour
 
     void Update()
     {
-        transform.position = new Vector3(transform.position.x - parallaxEffect, transform.position.y, transform.position.z);
+        //Agregado deltaTime para dar consistencia en distintos hardwares y aumentados los valores de ParallaxEffect.
+        transform.position = new Vector3(transform.position.x - parallaxEffect*Time.deltaTime, transform.position.y, transform.position.z);
         if (transform.localPosition.x < -20)
         {
             transform.localPosition = new Vector3(20, transform.localPosition.y, transform.localPosition.z);

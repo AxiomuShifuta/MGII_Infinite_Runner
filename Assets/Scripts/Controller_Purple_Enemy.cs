@@ -14,10 +14,10 @@ public class Controller_Purple_Enemy : Controller_Enemy
     }
 
     // Update is called once per frame
-    override public void Update()
+    override public void FixedUpdate()
     {
         Jump();
-        base.Update();
+        base.FixedUpdate();
     }
 
     void Jump()

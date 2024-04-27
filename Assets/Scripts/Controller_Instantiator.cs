@@ -5,18 +5,22 @@ public class Controller_Instantiator : MonoBehaviour
 {
     public List<GameObject> enemies;
     public GameObject instantiatePos;
+    public GameObject shieldPowerUp;
     public float respawningTimer;
+    public float shieldRespawnTimer;
     private float time = 0;
 
     void Start()
     {
         Controller_Enemy.enemyVelocity = 2;
+        shieldRespawnTimer = 2f;     
     }
 
     void Update()
     {
         SpawnEnemies();
         ChangeVelocity();
+        SpawnShield();
     }
 
     private void ChangeVelocity()
@@ -33,6 +37,23 @@ public class Controller_Instantiator : MonoBehaviour
         {
             Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Count)], instantiatePos.transform);
             respawningTimer = UnityEngine.Random.Range(2, 6);
+        }
+    }
+
+    private void SpawnShield()
+    {
+        shieldRespawnTimer -= Time.deltaTime;
+
+
+        if (shieldRespawnTimer <= 0)
+        {
+            if (UnityEngine.Random.Range(0, 5) == 3)
+            {
+                Instantiate(shieldPowerUp, instantiatePos.transform);
+
+                shieldRespawnTimer = 10f;
+            }
+            else shieldRespawnTimer = 2f;
         }
     }
 }
