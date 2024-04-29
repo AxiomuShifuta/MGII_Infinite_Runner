@@ -16,6 +16,15 @@ public class Controller_Shield : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-       rb.velocity = new Vector3(-10, 0, 0);
+        rb.velocity = new Vector3(-10, 0, 0);
+        OutOfBounds();
+    }
+
+    private void OutOfBounds()
+    {
+        if (this.transform.position.x <= -15)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

@@ -49,9 +49,7 @@ public class Controller_Instantiator : MonoBehaviour
         {
             if (UnityEngine.Random.Range(0, 5) == 3)
             {
-                Instantiate(shieldPowerUp, instantiatePos.transform);
-                /*No logro darle una posición diferente en "y" para que no se solape con los enemigos.
-                 Si trato de darle una posición absoluta usando Vector3, me tira error de sintaxis.*/
+                Instantiate(shieldPowerUp, instantiatePos.transform.position + new Vector3(0f,3f,0f),Quaternion.identity);
 
                 shieldRespawnTimer = 10f;
             }

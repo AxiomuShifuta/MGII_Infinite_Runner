@@ -8,7 +8,7 @@ public class Controller_Player : MonoBehaviour
     private float initialSize;
     private int i = 0;
     private bool floored;
-    private bool shielded;
+    public bool shielded;
     private Renderer playerRender;
 
     private void Start()
