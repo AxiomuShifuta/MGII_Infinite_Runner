@@ -82,10 +82,11 @@ public class Controller_Player : MonoBehaviour
             }
             else shielded = false;
             playerRender.material.SetColor("_Color", Color.blue);
-            /*Como los enemigos no son triggers, habrá un contacto físico con el jugador.
-            Si convirtiera a todos en triggers, debería programar unos segundos de invunerabilidad
-            para que el código del TriggerEnter no se ejecute inmediatamente de nuevo y cause
-            la muerte del jugador*/
+            BoxCollider bxClldr = collision.gameObject.GetComponent<BoxCollider>();
+            bxClldr.isTrigger = true;
+
+            /*El enemigo que colisione con el jugador se volverá trigger para no quedarse atascado.
+            No lo apliqué con el jugador, porque dejaba de detectar el suelo, lógicamente, y caía al vacío.*/
         }
 
         if (collision.gameObject.CompareTag("Floor"))
@@ -113,4 +114,5 @@ public class Controller_Player : MonoBehaviour
             floored = false;
         }
     }
+
 }

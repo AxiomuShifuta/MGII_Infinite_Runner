@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class Controller_Purple_Enemy : Controller_Enemy
 {
-    public float jumptimer;
-    private bool floored;
     public float jumpForce = 2;
     // Start is called before the first frame update
     void Start()
     {
-        jumptimer = 3;
+        
     }
 
     // Update is called once per frame
@@ -22,32 +20,14 @@ public class Controller_Purple_Enemy : Controller_Enemy
 
     void Jump()
     {
-        jumptimer -= Time.deltaTime;
-
-        if (jumptimer <= 0 && floored)
+        
+        if (transform.localPosition.x == -16)
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+            //Cambié tiempo por posición para disparar el salto, pero no funciona.
 
-            jumptimer = 4;
-           
         } /*Si activo la gravedad desde el inspector, el AddForce() del script Controller_Enemy no empuja al objeto.
            Si desactivo la gravedad, el objeto salta, pero nunca cae, lógicamente.*/
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Floor"))
-        {
-            floored = true;
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Floor"))
-        {
-            floored = false;
-        }
-    }
-
-    }
+}
