@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Controller_Purple_Enemy : Controller_Enemy
 {
-    public float jumpForce = 2;
+    public float jumpForce = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,16 +18,15 @@ public class Controller_Purple_Enemy : Controller_Enemy
         base.FixedUpdate();
     }
 
-    void Jump()
+    public void Jump()
     {
         
-        if (transform.localPosition.x == -16)
+        if (transform.position.x == -16f)
         {
+            Debug.Log("J");
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
             //Cambié tiempo por posición para disparar el salto, pero no funciona.
-
-        } /*Si activo la gravedad desde el inspector, el AddForce() del script Controller_Enemy no empuja al objeto.
-           Si desactivo la gravedad, el objeto salta, pero nunca cae, lógicamente.*/
+        } 
     }
 
 }
