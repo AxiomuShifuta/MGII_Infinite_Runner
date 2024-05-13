@@ -24,7 +24,7 @@ public class Controller_Purple_Enemy : Controller_Enemy
         if (transform.position.x == -16f)
         {
             Debug.Log("J");
-            rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+            rb.AddForce(new Vector3(rb.velocity.x, jumpForce, rb.velocity.z),ForceMode.VelocityChange);
             //Cambié tiempo por posición para disparar el salto, pero no funciona.
         } 
     }
