@@ -11,6 +11,7 @@ public class Controller_Purple_Enemy : Controller_Enemy
         
     }
 
+   
     // Update is called once per frame
     override public void FixedUpdate()
     {
@@ -21,7 +22,7 @@ public class Controller_Purple_Enemy : Controller_Enemy
     public void Jump()
     {
         
-        if (transform.position.x == -16f)
+        if(transform.position.x <= 0f)
         {
             Debug.Log("J");
             rb.AddForce(new Vector3(rb.velocity.x, jumpForce, rb.velocity.z),ForceMode.VelocityChange);

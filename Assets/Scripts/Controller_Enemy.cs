@@ -19,6 +19,7 @@ public class Controller_Enemy : MonoBehaviour
         OutOfBounds();
     }
 
+
     public void OutOfBounds()
     {
         if (this.transform.position.x <= -15)
